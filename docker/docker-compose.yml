@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: node:14-alpine3.10
+    container_name: zenndoc
+    ports:
+      - "8000:8000"
+      - "9000:9000"
+    volumes:
+      - ..:/home/node/app:delegated
+    tty: true
+    stdin_open: true
